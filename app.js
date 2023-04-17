@@ -11,8 +11,26 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 const sdk = require('api')('@render-api/v1.0#dnrc1ulf088q9j');
 
+function restartDocker() {
   console.log("Restarting Docker...");
   sdk.auth('rnd_BfFOGga8fMG5E4Qb5yFYTEphl5F5');
   sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cgtjt9iut4mcfrm72rsg'})
   .then(({ data }) => console.log(data))
+  .catch(err => console.error(err));
+  seconds = 0; // remove 'let' keyword here
+  timer();
+}
+
+function timer() {
+  seconds = seconds + 1; // remove 'let' keyword here
+  if (seconds <= 900) {
+    console.log(seconds, "s /900s to restart Docker");
+    setTimeout(timer, 1000);
+  }
+  else {
+    restartDocker();
+  }
+}
+
+setTimeout(timer, 10000);
 
