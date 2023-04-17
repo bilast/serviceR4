@@ -10,6 +10,8 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
 const sdk = require('api')('@render-api/v1.0#dnrc1ulf088q9j');
+let seconds = 0;
+console.log("Server restart is up and running!");
 
 function restartDocker() {
   console.log("Restarting Docker...");
