@@ -19,8 +19,12 @@ function restartDocker() {
   sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cgtjt9iut4mcfrm72rsg'})
   .then(({ data }) => console.log(data))
   .catch(err => console.error(err));
-  seconds = 0; // remove 'let' keyword here
-  timer();
+  
+  console.log("Restarting Docker...");
+  sdk.auth('rnd_BfFOGga8fMG5E4Qb5yFYTEphl5F5');
+  sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cguahp5269vbmeq1ufng'})
+  .then(({ data }) => console.log(data))
+  .catch(err => console.error(err));
 }
 
 function timer() {
