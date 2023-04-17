@@ -38,5 +38,5 @@ function timer() {
   }
 }
 
-setTimeout(timer, 10000);
+// setTimeout(timer, 10000);
 
