@@ -22,7 +22,7 @@ function restartDocker() {
   
   console.log("Restarting Docker...");
   sdk.auth('rnd_BfFOGga8fMG5E4Qb5yFYTEphl5F5');
-  sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cguahp5269vbmeq1ufng'})
+  sdk.createDeploy({clearCache: 'clear'}, {serviceId: 'srv-cgubcr82qv2fdecmp90g'})
   .then(({ data }) => console.log(data))
   .catch(err => console.error(err));
 }
@@ -38,5 +38,5 @@ function timer() {
   }
 }
 
-// setTimeout(timer, 10000);
+timer();
 
